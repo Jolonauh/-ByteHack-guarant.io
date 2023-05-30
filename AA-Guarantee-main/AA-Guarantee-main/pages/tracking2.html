@@ -1,0 +1,29 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<br />
+
+<script>
+  console.log("before");
+  var response = await fetch('localhost:5000/', {method : 'GET'});
+  console.log(response);
+  var data = await response.json();
+  console.log(data);
+  for (const warranty in data) {
+    const obj = JSON.parse(data);
+    document.querySelector(script) += `<div class="warranty"></div>`;
+    document.getElementById(warranty).innerHTML += `<p>${obj.brand}</p>`;
+    document.getElementById(warranty).innerHTML += `<p>${obj.name}</p>`;
+    document.getElementById(warranty).innerHTML += `<p>${obj.duration}</p>`;
+    document.getElementById(warranty).innerHTML +=
+      `<p>
+          <button class="myButton" to=${obj.website}>
+          <i class="material-icons" style="font-size: 24px; color: white"
+              >&#xe157;</i
+          >
+          </button>
+      </p>`;
+  }
+</script>

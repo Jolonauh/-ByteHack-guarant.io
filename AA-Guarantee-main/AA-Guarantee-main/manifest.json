@@ -1,0 +1,31 @@
+{
+  "name": "Guarantio",
+  "description": "Secure storage of online warranties and guarantees, for hassle-free checking.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "background", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Guarantio",
+    "default_icon": {
+      "16": "icons/guarantio-16x16.png",
+      "32": "icons/guarantio-32x32.png",
+      "48": "icons/guarantio-48x48.png",
+      "128": "icons/guarantio-128x128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["guarantee.js"],
+      "run_At": ["document_end"]
+    }
+  ],
+  "icons": {
+    "16": "icons/guarantio-16x16.png",
+    "32": "icons/guarantio-32x32.png",
+    "48": "icons/guarantio-48x48.png",
+    "128": "icons/guarantio-128x128.png"
+  }
+}
